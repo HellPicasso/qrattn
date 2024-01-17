@@ -83,6 +83,7 @@ def seek_attendance(cid):
     if bool(cl):
         # check if its a valid time to get attendance
         now = datetime.now()
+        print(now)
         if now < cl.startTime or now > cl.endTime:
             flash(
                 f"Attendance for this class only available from {cl.startTime} to {cl.endTime}"
