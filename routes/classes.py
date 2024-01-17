@@ -100,7 +100,7 @@ def seek_attendance(cid):
         return redirect(url_for("main.profile"))
 
     # check location info of teacher and student
-    client_ip = request.remote_addr
+    client_ip = request.environ["REMOTE_ADDR"]
     print("ip", client_ip)
     resp = requests.get(f"http://ip-api.com/json/{client_ip}")
     rjson = resp.json()
